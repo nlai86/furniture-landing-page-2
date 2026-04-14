@@ -18,7 +18,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-6 md:px-12 py-5">
-        <a href="#" className="font-heading text-xl md:text-2xl tracking-[0.2em] text-foreground">
+        <a
+          href="#"
+          className={`font-heading text-xl md:text-2xl tracking-[0.2em] transition-colors duration-500 ${
+            scrolled ? "text-foreground" : "text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]"
+          }`}
+        >
           STUDIO FORM
         </a>
         <div className="hidden md:flex items-center gap-10">
@@ -26,7 +31,11 @@ const Navbar = () => {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-sm tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className={`text-sm tracking-[0.15em] uppercase transition-colors duration-500 ${
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-white/90 hover:text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.4)]"
+              }`}
             >
               {link}
             </a>
